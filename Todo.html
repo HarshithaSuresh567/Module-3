@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title> ToDo List </title>
+</head>
+<body>
+    <h2 style="text-align: center;">ToDo list (LocalStorage)</h2>
+    <div id=" box">
+        <textarea id ="tasks" placeholder="Add your task..."></textarea>
+        <button onclick="addTask()"> Add Task </button>
+        <button> Clear All </button>
+    </div>
+    
+    
+        
+
+</body>
+<script>
+    let task = [];
+    function save() {
+        localStorage.setItem("task", JSON.stringify(task))
+
+    }
+    function addTask() {
+        let text = document.getElementById("tasks").value;
+        task.push(text);
+        save()
+
+    }
+</html>
